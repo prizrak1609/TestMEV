@@ -1,26 +1,164 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rRn-cm-fOF">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="SearchController" customModule="TestMEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-mn-yTv">
+                                <rect key="frame" x="0.0" y="64" width="246" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD1-cY-FQs">
+                                <rect key="frame" x="246" y="64" width="74" height="44"/>
+                                <color key="backgroundColor" red="0.78853017091751099" green="0.7890656590461731" blue="0.80633032321929932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KcI-AC-OgT"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OKw-0g-dd1">
+                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Oyl-mn-yTv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HYf-pq-9zr"/>
+                            <constraint firstItem="xD1-cY-FQs" firstAttribute="height" secondItem="Oyl-mn-yTv" secondAttribute="height" id="Ha5-Gu-7jD"/>
+                            <constraint firstItem="Oyl-mn-yTv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Mte-AP-4K7"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OKw-0g-dd1" secondAttribute="bottom" id="S4H-d2-Lmf"/>
+                            <constraint firstItem="xD1-cY-FQs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XKf-c1-uCg"/>
+                            <constraint firstItem="OKw-0g-dd1" firstAttribute="top" secondItem="Oyl-mn-yTv" secondAttribute="bottom" id="cDL-Pb-bmp"/>
+                            <constraint firstItem="OKw-0g-dd1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d5M-SG-g95"/>
+                            <constraint firstAttribute="trailing" secondItem="OKw-0g-dd1" secondAttribute="trailing" id="lkL-IJ-K2A"/>
+                            <constraint firstAttribute="trailing" secondItem="xD1-cY-FQs" secondAttribute="trailing" id="onz-cZ-NYD"/>
+                            <constraint firstItem="xD1-cY-FQs" firstAttribute="leading" secondItem="Oyl-mn-yTv" secondAttribute="trailing" id="qbk-bk-UL3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Search" id="hGZ-SR-NQM"/>
+                    <connections>
+                        <outlet property="searchBar" destination="Oyl-mn-yTv" id="XEt-FG-pRb"/>
+                        <outlet property="searchButton" destination="xD1-cY-FQs" id="NJM-67-xtn"/>
+                        <outlet property="tableView" destination="OKw-0g-dd1" id="6Zb-Fw-pJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1966.875" y="-346.47887323943661"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RS6-Ri-8Wr">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="rRn-cm-fOF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gGg-Ly-MEa">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="geV-Jh-P5I" kind="relationship" relationship="viewControllers" id="wHN-rN-8iq"/>
+                        <segue destination="k8w-VG-A7K" kind="relationship" relationship="viewControllers" id="hUK-r6-Bhy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OpS-Uu-ZGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="nWu-JH-7AR">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="azR-H4-Us8" customClass="HistoryController" customModule="TestMEV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dyw-0J-Sfw"/>
+                        <viewControllerLayoutGuide type="bottom" id="Mf7-zg-hOR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YW0-zd-MfR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fV2-fw-5Ai">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mf7-zg-hOR" firstAttribute="top" secondItem="fV2-fw-5Ai" secondAttribute="bottom" id="B7L-le-qnb"/>
+                            <constraint firstItem="fV2-fw-5Ai" firstAttribute="leading" secondItem="YW0-zd-MfR" secondAttribute="leading" id="UNc-Uz-qDT"/>
+                            <constraint firstAttribute="trailing" secondItem="fV2-fw-5Ai" secondAttribute="trailing" id="cyv-yC-6iW"/>
+                            <constraint firstItem="fV2-fw-5Ai" firstAttribute="top" secondItem="Dyw-0J-Sfw" secondAttribute="bottom" id="ocL-TM-Zyg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="History" id="T3I-zp-6Vm"/>
+                    <connections>
+                        <outlet property="tableView" destination="fV2-fw-5Ai" id="oaG-fM-CDR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rjb-WA-MCz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1967" y="343"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="GH0-lG-psp">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="geV-Jh-P5I" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="hb2-1d-kSi"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="prW-Vv-M39">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="q74-H1-kYC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kgt-b1-LI6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969.375" y="-346.47887323943661"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="5w2-4t-dGw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k8w-VG-A7K" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="SK1-kZ-WMT"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WHs-Ad-pCh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="azR-H4-Us8" kind="relationship" relationship="rootViewController" id="PSN-ru-TG6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VfL-b3-3vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="343"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="history" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
+    </resources>
 </document>

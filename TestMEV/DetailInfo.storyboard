@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ZhY-yf-2bi">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail Info Controller-->
+        <scene sceneID="RpM-Ha-abT">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="ZhY-yf-2bi" customClass="DetailInfoController" customModule="TestMEV" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lxE-UC-13V"/>
+                        <viewControllerLayoutGuide type="bottom" id="JHE-AM-la2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KIG-17-Q8c">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iIn-HR-7Le">
+                                <rect key="frame" x="16" y="64" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcl-kw-Xdf">
+                                <rect key="frame" x="16" y="90" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yex-iQ-cZD">
+                                <rect key="frame" x="16" y="116" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yex-iQ-cZD" secondAttribute="height" multiplier="1:1" id="fbd-Wq-GyE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pcl-kw-Xdf" firstAttribute="trailing" secondItem="iIn-HR-7Le" secondAttribute="trailing" id="4Zi-Bh-9tk"/>
+                            <constraint firstItem="pcl-kw-Xdf" firstAttribute="leading" secondItem="iIn-HR-7Le" secondAttribute="leading" id="4gw-KO-esJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yex-iQ-cZD" secondAttribute="trailing" id="APs-if-zbR"/>
+                            <constraint firstItem="iIn-HR-7Le" firstAttribute="leading" secondItem="KIG-17-Q8c" secondAttribute="leadingMargin" id="HLr-Ti-RcV"/>
+                            <constraint firstItem="yex-iQ-cZD" firstAttribute="leading" secondItem="KIG-17-Q8c" secondAttribute="leadingMargin" id="I0J-0L-bx7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iIn-HR-7Le" secondAttribute="trailing" id="IfQ-hh-dVJ"/>
+                            <constraint firstItem="yex-iQ-cZD" firstAttribute="top" secondItem="pcl-kw-Xdf" secondAttribute="bottom" constant="5" id="YiN-Y2-khx"/>
+                            <constraint firstItem="iIn-HR-7Le" firstAttribute="top" secondItem="lxE-UC-13V" secondAttribute="bottom" id="uuC-XK-VqP"/>
+                            <constraint firstItem="pcl-kw-Xdf" firstAttribute="top" secondItem="iIn-HR-7Le" secondAttribute="bottom" constant="5" id="yrq-H3-jfg"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="movieNameLabel" destination="iIn-HR-7Le" id="p1g-be-SA1"/>
+                        <outlet property="moviePosterImageView" destination="yex-iQ-cZD" id="ehc-gl-QcO"/>
+                        <outlet property="movieReleaseDateLabel" destination="pcl-kw-Xdf" id="mvR-I1-eTa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Slk-ch-ikb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130" y="139"/>
+        </scene>
+    </scenes>
+</document>
