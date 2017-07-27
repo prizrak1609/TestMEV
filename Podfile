@@ -30,4 +30,9 @@ target 'TestMEV' do
 # https://github.com/Alamofire/AlamofireImage
   pod 'AlamofireImage', '~> 3.1'
 
+  target 'TestMEVTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
 end

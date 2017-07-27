@@ -13,6 +13,13 @@ import RealmSwift
 // swiftlint:disable force_try
 final class Database {
 
+    func deleteAll() {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
+    }
+
     func save(movie: MovieModel) {
         let realm = try! Realm()
         try! realm.write {

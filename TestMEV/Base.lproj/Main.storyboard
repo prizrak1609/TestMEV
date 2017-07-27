@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Oyl-mn-yTv">
-                                <rect key="frame" x="0.0" y="64" width="246" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="249" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD1-cY-FQs">
-                                <rect key="frame" x="246" y="64" width="74" height="44"/>
+                                <rect key="frame" x="249" y="64" width="71" height="44"/>
                                 <color key="backgroundColor" red="0.78853017091751099" green="0.7890656590461731" blue="0.80633032321929932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
