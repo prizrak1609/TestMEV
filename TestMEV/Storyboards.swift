@@ -12,7 +12,7 @@ enum Storyboards {
 
     enum Name {
         static let main = "Main"
-        static let infoScreen = "DetailInfo"
+        static let detailInfo = "DetailInfo"
     }
 
     static var main: UIViewController? {
@@ -20,6 +20,6 @@ enum Storyboards {
     }
 
     static var detailInfo: UIViewController? {
-        return UIStoryboard(name: Name.infoScreen, bundle: nil).instantiateInitialViewController()
+        return UIStoryboard(name: Name.detailInfo, bundle: nil).instantiateInitialViewController()
     }
 }

@@ -9,5 +9,5 @@
 import Foundation
 
 enum CellIdentifiers {
-    static let moviewBaseInfo = "MovieBaseInfoCell"
+    static let movieBaseInfo = "MovieBaseInfoCell"
 }

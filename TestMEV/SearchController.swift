@@ -60,7 +60,7 @@ extension SearchController : BaseTableViewDelegate {
             controller.model = model
             navigationController?.pushViewController(controller, animated: true)
         } else {
-            log("can't get \(Storyboards.Name.infoScreen) storyboard")
+            log("can't get \(Storyboards.Name.detailInfo) storyboard")
         }
     }
 

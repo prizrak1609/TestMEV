@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--Search movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="SearchController" customModule="TestMEV" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <constraint firstItem="xD1-cY-FQs" firstAttribute="leading" secondItem="Oyl-mn-yTv" secondAttribute="trailing" id="qbk-bk-UL3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="hGZ-SR-NQM"/>
+                    <navigationItem key="navigationItem" title="Search movies" id="hGZ-SR-NQM"/>
                     <connections>
                         <outlet property="searchBar" destination="Oyl-mn-yTv" id="XEt-FG-pRb"/>
                         <outlet property="searchButton" destination="xD1-cY-FQs" id="NJM-67-xtn"/>
@@ -84,7 +84,7 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
         </scene>
-        <!--History-->
+        <!--Search history-->
         <scene sceneID="nWu-JH-7AR">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="azR-H4-Us8" customClass="HistoryController" customModule="TestMEV" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,7 +109,7 @@
                             <constraint firstItem="fV2-fw-5Ai" firstAttribute="top" secondItem="Dyw-0J-Sfw" secondAttribute="bottom" id="ocL-TM-Zyg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="T3I-zp-6Vm"/>
+                    <navigationItem key="navigationItem" title="Search history" id="T3I-zp-6Vm"/>
                     <connections>
                         <outlet property="tableView" destination="fV2-fw-5Ai" id="oaG-fM-CDR"/>
                     </connections>

@@ -27,7 +27,7 @@ class BaseTableViewController : UIViewController, UITableViewDelegate, UITableVi
             delegate.tableView.delegate = self
             delegate.tableView.dataSource = self
             delegate.tableView.rowHeight = MovieBaseInfoCell.height
-            delegate.tableView.register(UINib(nibName: CellIdentifiers.moviewBaseInfo, bundle: nil), forCellReuseIdentifier: CellIdentifiers.moviewBaseInfo)
+            delegate.tableView.register(UINib(nibName: CellIdentifiers.movieBaseInfo, bundle: nil), forCellReuseIdentifier: CellIdentifiers.movieBaseInfo)
         }
     }
 
@@ -41,7 +41,7 @@ class BaseTableViewController : UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.moviewBaseInfo) as? MovieBaseInfoCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.movieBaseInfo) as? MovieBaseInfoCell else { return UITableViewCell() }
         let model = movieModels[indexPath.row]
         cell.model = model
         return cell

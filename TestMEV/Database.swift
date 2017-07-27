@@ -13,6 +13,7 @@ import RealmSwift
 // swiftlint:disable force_try
 final class Database {
 
+    // created for unit tests
     func deleteAll() {
         let realm = try! Realm()
         try! realm.write {
