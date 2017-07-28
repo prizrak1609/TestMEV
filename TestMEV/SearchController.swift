@@ -16,8 +16,7 @@ final class SearchController: BaseTableViewController {
     @IBOutlet fileprivate weak var searchButton: UIButton!
 
     fileprivate let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    fileprivate let server = Server()
-    fileprivate let database = Database()
+    fileprivate let dataLayer = DataLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ final class SearchController: BaseTableViewController {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
         activityIndicator.isHidden = false
-        server.searchMovies(title: searchBar.text ?? "") { [weak self] result in
+        dataLayer.searchMovies(title: searchBar.text ?? "") { [weak self] result in
             guard let welf = self else { return }
             welf.activityIndicator.stopAnimating()
             welf.activityIndicator.removeFromSuperview()
@@ -56,7 +55,7 @@ extension SearchController : BaseTableViewDelegate {
 
     func clicked(_ model: MovieModel) {
         if let controller = Storyboards.detailInfo as? DetailInfoController {
-            database.saveToSearchHistory(movie: model)
+            dataLayer.saveToSearchHistory(movie: model)
             controller.model = model
             navigationController?.pushViewController(controller, animated: true)
         } else {

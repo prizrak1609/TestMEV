@@ -13,7 +13,7 @@ final class HistoryController: BaseTableViewController {
     //swiftlint:disable:next private_outlet
     @IBOutlet weak var tableView: UITableView!
 
-    fileprivate let database = Database()
+    fileprivate let dataLayer = DataLayer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,7 @@ final class HistoryController: BaseTableViewController {
 extension HistoryController {
 
     func getHistory() {
-        let historyMoviesArray = database.getSearchHistory()
-        movieModels = historyMoviesArray
+        movieModels = dataLayer.getSearchHistory()
         tableView.reloadData()
     }
 }

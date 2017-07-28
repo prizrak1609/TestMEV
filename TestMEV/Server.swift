@@ -10,37 +10,30 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-typealias ServerSearchMoviewsCompletion = (Result<[MovieModel]>) -> Void
+typealias ServerSearchMoviesCompletion = (Result<[MovieModel]>) -> Void
 
 final class Server {
     private let baseURLPath = "http://www.theimdbapi.org"
-    private let database = Database()
 
-    func searchMovies(title: String, _ completion: @escaping ServerSearchMoviewsCompletion) {
-        let movies = database.getMovies(by: title)
-        if !movies.isEmpty {
-            completion(.success(movies))
-        } else {
-            let url = baseURLPath.appending("/api/find/movie")
-            let params = ["title" : title]
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            Alamofire.request(url, method: .get, parameters: params).responseJSON { [weak self] response in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                guard let welf = self else { return }
-                let jsonResult = welf.preParseJSON(response: response)
-                if case .failure(let error) = jsonResult {
-                    completion(.failure(error))
-                    return
+    func searchMovies(title: String, _ completion: @escaping ServerSearchMoviesCompletion) {
+        let url = baseURLPath.appending("/api/find/movie")
+        let params = ["title" : title]
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        Alamofire.request(url, method: .get, parameters: params).responseJSON { [weak self] response in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            guard let welf = self else { return }
+            let jsonResult = welf.preParseJSON(response: response)
+            if case .failure(let error) = jsonResult {
+                completion(.failure(error))
+                return
+            }
+            if case .success(let json) = jsonResult {
+                let moviesArray = json.arrayValue.map { json -> MovieModel in
+                    let movie = MovieModel(json: json)
+                    movie.searchWorld = title
+                    return movie
                 }
-                if case .success(let json) = jsonResult {
-                    let moviesArray = json.arrayValue.map { json -> MovieModel in
-                        let movie = MovieModel(json: json)
-                        movie.searchWorld = title
-                        welf.database.save(movie: movie)
-                        return movie
-                    }
-                    completion(.success(moviesArray))
-                }
+                completion(.success(moviesArray))
             }
         }
     }
