@@ -264,6 +264,7 @@
 			buildConfigurationList = 78C513D51F2A471F00D791F3 /* Build configuration list for PBXNativeTarget "TestMEVTests" */;
 			buildPhases = (
 				9573753B55C98AE9AE7D33F9 /* [CP] Check Pods Manifest.lock */,
+				78994D721F2B8C0C00C9DEDC /* ShellScript */,
 				78C513CA1F2A471F00D791F3 /* Sources */,
 				78C513CB1F2A471F00D791F3 /* Frameworks */,
 				78C513CC1F2A471F00D791F3 /* Resources */,
@@ -393,6 +394,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestMEV/Pods-TestMEV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		78994D721F2B8C0C00C9DEDC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 		};
 		78FDCD361F29FEBF002B3D92 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
